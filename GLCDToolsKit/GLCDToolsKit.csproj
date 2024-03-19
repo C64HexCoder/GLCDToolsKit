@@ -60,10 +60,10 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>B707CC7772D8CF85B85DB275EA8CC29733275D1D</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>BB1B718811FD54C1D111BE27BD55B88AB9044CD4</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>GLCDToolsKit_5_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>GLCDToolsKit_6_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <GenerateManifests>true</GenerateManifests>
@@ -102,7 +102,8 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>aidoraz.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SKGL, Version=2.0.5.3, Culture=neutral, PublicKeyToken=c2850a745143a030, processorArchitecture=MSIL">
@@ -196,14 +197,8 @@
     <EmbeddedResource Include="Settings.resx">
       <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="aidoraz.pfx" />
     <None Include="app.config" />
-    <None Include="GLCDToolsKit_1_TemporaryKey.pfx" />
-    <None Include="GLCDToolsKit_2_TemporaryKey.pfx" />
-    <None Include="GLCDToolsKit_3_TemporaryKey.pfx" />
-    <None Include="GLCDToolsKit_4_TemporaryKey.pfx" />
-    <None Include="GLCDToolsKit_5_TemporaryKey.pfx" />
-    <None Include="GLCDToolsKit_TemporaryKey.pfx" />
+    <None Include="GLCDToolsKit_6_TemporaryKey.pfx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

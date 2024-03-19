@@ -119,8 +119,11 @@ namespace GLCDToolsKit
                     break;
 
                 case 16:
+                    
                     ButtonWidth = 64;
-                    Rows = InARow = Convert.ToInt32(Math.Sqrt(NumOfColors));
+                    //Rows = InARow = Convert.ToInt32(Math.Sqrt(NumOfColors));
+            
+                    Rows = InARow = 4;
                     SpaceFromForm = 8;
                     CellSpacing = 2;
                     break;
@@ -128,9 +131,10 @@ namespace GLCDToolsKit
                 default:
                 case 256:
                     ButtonWidth = 16;
-                    Rows = InARow = Convert.ToInt32(Math.Sqrt(NumOfColors));
+                    //Rows = InARow = Convert.ToInt32(Math.Sqrt(NumOfColors)); 
                     SpaceFromForm = 4;
-                    CellSpacing = 1;
+                    CellSpacing =
+                    Rows = InARow = 16;
                     break;
             }
 
