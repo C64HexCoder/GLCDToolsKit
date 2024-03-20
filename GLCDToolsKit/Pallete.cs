@@ -27,7 +27,7 @@ namespace GLCDToolsKit
             try
             {
                 
-     /*           switch (bitmap.PixelFormat)
+                switch (bitmap.PixelFormat)
                 {
 
                     case System.Drawing.Imaging.PixelFormat.Format1bppIndexed:
@@ -44,7 +44,7 @@ namespace GLCDToolsKit
                         
                         break;
  
-                } */
+                } 
 
                 PlaceControls(bitmap.Palette.Entries.Length);
 
