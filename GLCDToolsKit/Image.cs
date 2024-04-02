@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 
 namespace GLCDToolsKit
@@ -349,7 +350,7 @@ namespace GLCDToolsKit
 
 
 
-        public void DrawPixeled (Graphics gfx, int PosX, int PosY)
+        public void DrawPixeled (Graphics gfx, Form parent,int PosX, int PosY)
         {
             //Pen pen = new Pen(Color.Green, 1);
             //Rectangle rectangle = new Rectangle();
@@ -357,17 +358,23 @@ namespace GLCDToolsKit
             gfx.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.None;
             gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
 
+            BufferedGraphicsContext myBufferedGfxContext = BufferedGraphicsManager.Current;
+            BufferedGraphics buffer;
+
+            buffer = myBufferedGfxContext.Allocate(gfx, parent.DisplayRectangle);
+            buffer.Graphics.Clear(Control.DefaultBackColor);
+
 
             try
             {
                 SolidBrush PixelOn = new SolidBrush(Color.Green), PixelOff = new SolidBrush(Color.White);
-
+                
                 for (byte x = 0; x < bitmap.Width; x++)
                     for (byte y = 0; y < bitmap.Height; y++)
                         if (bitmap.GetPixel(x, y).ToArgb() != BackgroundColor.ToArgb())
-                            gfx.FillRectangle(PixelOn, new Rectangle(PosX + x * 5, PosY + y * 5, 4, 4));
+                            buffer.Graphics.FillRectangle(PixelOn, new Rectangle(PosX + x * 5, PosY + y * 5, 4, 4));
                     else
-                        gfx.FillRectangle(PixelOff, new Rectangle(PosX + x * 5, PosY + y * 5, 4, 4));
+                        buffer.Graphics.FillRectangle(PixelOff, new Rectangle(PosX + x * 5, PosY + y * 5, 4, 4));
 
             }
             catch (NullReferenceException e)
@@ -378,9 +385,11 @@ namespace GLCDToolsKit
             {
                 MessageBox.Show(e.Message, "Error");
             }
+            buffer.Render(gfx);
+            buffer.Dispose();
         }
 
-        public void DrawColoredPixeled(Graphics gfx, int PosX, int PosY)
+        public void DrawColoredPixeled(Graphics gfx, Form parent ,int PosX, int PosY)
         {
             //Pen pen = new Pen(Color.Green, 1);
             //Rectangle rectangle = new Rectangle();
@@ -388,6 +397,11 @@ namespace GLCDToolsKit
             gfx.PixelOffsetMode = System.Drawing.Drawing2D.PixelOffsetMode.None;
             gfx.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.None;
 
+            BufferedGraphicsContext myBufferedGfxContext = BufferedGraphicsManager.Current;
+            BufferedGraphics buffer;
+
+            buffer = myBufferedGfxContext.Allocate(gfx, parent.DisplayRectangle);
+            buffer.Graphics.Clear(Control.DefaultBackColor);
 
             try
             {
@@ -395,7 +409,7 @@ namespace GLCDToolsKit
 
                 for (byte x = 0; x < bitmap.Width; x++)
                     for (byte y = 0; y < bitmap.Height; y++)
-                            gfx.FillRectangle(new SolidBrush (bitmap.GetPixel(x,y)), new Rectangle(PosX + x * 5, PosY + y * 5, 4, 4));
+                            buffer.Graphics.FillRectangle(new SolidBrush (bitmap.GetPixel(x,y)), new Rectangle(PosX + x * 5, PosY + y * 5, 4, 4));
 
             }
             catch (NullReferenceException e)
@@ -406,6 +420,9 @@ namespace GLCDToolsKit
             {
                 MessageBox.Show(e.Message, "Error");
             }
+
+            buffer.Render(gfx);
+            buffer.Dispose();
         }
 
         // the image is build from memory orgenized byte after byte, arranged horizontally in memory.

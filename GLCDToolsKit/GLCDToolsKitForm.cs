@@ -37,6 +37,11 @@ namespace GLCDToolsKit
             // read settings from registry
             //RegistryKeyPermissionCheck regcheck = RegistryKeyPermissionCheck.ReadWriteSubTree;
             glcdkey = Registry.CurrentUser.CreateSubKey("SOFTWARE\\GLCD Tollskit");
+            // SetStyle (ControlStyles.OptimizedDoubleBuffer, true);
+            //SetStyle(ControlStyles.AllPaintingInWmPaint, true);
+
+            
+
 
 #if SERIALKEY
             try
@@ -161,9 +166,9 @@ namespace GLCDToolsKit
                     SetStatusbarBpp();
 
                     if (settings.ImageGrixColors == Image.ImageDisplayEnum.Color)
-                        image.DrawColoredPixeled(CreateGraphics(), (Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
+                        image.DrawColoredPixeled(CreateGraphics(), this,(Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
                     else
-                        image.DrawPixeled(CreateGraphics(), (Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
+                        image.DrawPixeled(CreateGraphics(), this,(Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
 
                     if (image.IsIndexed())
                     {
@@ -246,7 +251,7 @@ namespace GLCDToolsKit
                 BGColorButton.BackColor = pallete.selectedColor;
 
                 if (image.bitmap != null)
-                    image.DrawPixeled(CreateGraphics(), (Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
+                    image.DrawPixeled(CreateGraphics(), this,(Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
             }
             //pallete.Colors.Controls[0];
         }
@@ -312,7 +317,7 @@ namespace GLCDToolsKit
                 {                  
                     image.BackgroundColor = BGColorButton.BackColor = Color = pallete.selectedColor;
                     if (image.bitmap != null)
-                        image.DrawPixeled(graphics, (Width - GLCDToolsKitForm.image.bitmap.Width * 5) / 2, (Height - GLCDToolsKitForm.image.bitmap.Height * 5) / 2);
+                        image.DrawPixeled(graphics, this, (Width - GLCDToolsKitForm.image.bitmap.Width * 5) / 2, (Height - GLCDToolsKitForm.image.bitmap.Height * 5) / 2);
                 }
             }
             else if (colorDialog1.ShowDialog() == DialogResult.OK)
@@ -320,7 +325,7 @@ namespace GLCDToolsKit
                 image.BackgroundColor = BGColorButton.BackColor = Color = this.colorDialog1.Color;
 
                 if (image.bitmap != null)
-                    image.DrawPixeled(graphics, (Width - GLCDToolsKitForm.image.bitmap.Width * 5) / 2, (Height - GLCDToolsKitForm.image.bitmap.Height * 5) / 2);
+                    image.DrawPixeled(graphics, this, (Width - GLCDToolsKitForm.image.bitmap.Width * 5) / 2, (Height - GLCDToolsKitForm.image.bitmap.Height * 5) / 2);
             }
             toolStripStatusLabel1.Text = "Background color has been changed...";
         }
@@ -829,9 +834,9 @@ namespace GLCDToolsKit
 #endif
             if (image.bitmap != null)
                 if (settings.ImageGrixColors == Image.ImageDisplayEnum.Color)
-                    image.DrawColoredPixeled(CreateGraphics(), (Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
+                    image.DrawColoredPixeled(CreateGraphics(), this, (Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
                 else
-                    image.DrawPixeled(CreateGraphics(),(Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
+                    image.DrawPixeled(CreateGraphics(),this, (Width - (image.bitmap.Width * 5)) / 2, (Height - (image.bitmap.Height * 5)) / 2);
       
         }
 
