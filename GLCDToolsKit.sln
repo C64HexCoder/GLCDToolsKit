@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLCDToolsKit", "GLCDToolsKit\GLCDToolsKit.csproj", "{20D6CE93-7E62-4127-9C9C-31F946FAEF8F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5C6DA683-466B-4328-A12E-AA20DC9AB873} = {5C6DA683-466B-4328-A12E-AA20DC9AB873}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GfxLib", "Graphics\GfxLib.csproj", "{5C6DA683-466B-4328-A12E-AA20DC9AB873}"
 EndProject
