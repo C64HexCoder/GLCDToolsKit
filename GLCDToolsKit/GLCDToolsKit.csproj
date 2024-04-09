@@ -263,6 +263,12 @@
     <None Include="Resources\if_button_ok_1710.png" />
     <None Include="Resources\1536 - folder image.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Graphics\GfxLib.csproj">
+      <Project>{5C6DA683-466B-4328-A12E-AA20DC9AB873}</Project>
+      <Name>GfxLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

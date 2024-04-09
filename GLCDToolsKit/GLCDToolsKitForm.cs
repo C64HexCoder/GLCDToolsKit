@@ -155,7 +155,6 @@ namespace GLCDToolsKit
                 {
                     if (image.bitmap != null)
                     {
-                        pallete.DisposeButtons();
                         image.bitmap.Dispose();
                         image.bitmap = null;
                     }

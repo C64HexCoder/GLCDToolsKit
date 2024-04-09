@@ -14,7 +14,7 @@ namespace GLCDToolsKit
     public class Image
     {
         private ImgInfo imginfo;
-        private Pallete Pallete;
+        private Pallete PalleteDlg;
         public BitmapData BitmapData;
         public byte[] ImageData;
         //private byte[] ImageMonoData;
@@ -43,7 +43,7 @@ namespace GLCDToolsKit
         public Image(ImgInfo imgI,Pallete pallete)
         {
             imginfo = imgI;
-            Pallete = pallete;
+            PalleteDlg = pallete;
         }
 
    
@@ -89,7 +89,7 @@ namespace GLCDToolsKit
 
                     if (IsIndexed())
                     {
-                        Pallete.updatePallete(_bitmap);
+                        PalleteDlg.Pallate.SetPalette(bitmap);
 
                     }
                     else
@@ -159,7 +159,7 @@ namespace GLCDToolsKit
             }
 
             Marshal.Copy(ImageData, 0, BitmapData.Scan0, bytes);
-            Pallete.updatePallete(bitmap);
+            PalleteDlg.Pallate.SetPalette(bitmap);
 
         }
 
