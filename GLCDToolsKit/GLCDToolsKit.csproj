@@ -141,6 +141,12 @@
     <Compile Include="CharEditor.Designer.cs">
       <DependentUpon>CharEditor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Fonts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Fonts.Designer.cs">
+      <DependentUpon>Fonts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CharEditor.resx">
       <DependentUpon>CharEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Fonts.resx">
+      <DependentUpon>Fonts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GLCDToolsKitForm.resx">
       <DependentUpon>GLCDToolsKitForm.cs</DependentUpon>

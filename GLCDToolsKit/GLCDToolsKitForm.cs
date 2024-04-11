@@ -946,5 +946,11 @@ namespace GLCDToolsKit
         {
   
         }
+
+        private void fontToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Fonts fonts = new Fonts();
+            fonts.ShowDialog(this);
+        }
     }
 }

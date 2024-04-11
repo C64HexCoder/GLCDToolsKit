@@ -72,35 +72,40 @@
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.LoadImageBtn = new System.Windows.Forms.Button();
             this.RegistrationTimer = new System.Windows.Forms.Timer(this.components);
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(12, 504);
+            this.progressBar.Location = new System.Drawing.Point(18, 775);
+            this.progressBar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(710, 23);
+            this.progressBar.Size = new System.Drawing.Size(1065, 35);
             this.progressBar.TabIndex = 1;
             // 
             // Filename_tb
             // 
-            this.Filename_tb.Location = new System.Drawing.Point(12, 51);
+            this.Filename_tb.Location = new System.Drawing.Point(18, 78);
+            this.Filename_tb.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Filename_tb.Name = "Filename_tb";
-            this.Filename_tb.Size = new System.Drawing.Size(682, 20);
+            this.Filename_tb.Size = new System.Drawing.Size(1021, 26);
             this.Filename_tb.TabIndex = 3;
             // 
             // imageLable
             // 
             this.imageLable.AutoSize = true;
-            this.imageLable.Location = new System.Drawing.Point(9, 35);
+            this.imageLable.Location = new System.Drawing.Point(14, 54);
+            this.imageLable.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.imageLable.Name = "imageLable";
-            this.imageLable.Size = new System.Drawing.Size(36, 13);
+            this.imageLable.Size = new System.Drawing.Size(54, 20);
             this.imageLable.TabIndex = 4;
             this.imageLable.Text = "Image";
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
@@ -108,7 +113,7 @@
             this.aboutToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(734, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1101, 35);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,14 +126,14 @@
             this.saveImageToolStripMenuItem,
             this.saveImageAsToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // openImageToolStripMenuItem
             // 
             this.openImageToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.folder_image;
             this.openImageToolStripMenuItem.Name = "openImageToolStripMenuItem";
-            this.openImageToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.openImageToolStripMenuItem.Size = new System.Drawing.Size(344, 34);
             this.openImageToolStripMenuItem.Text = "Open Image";
             this.openImageToolStripMenuItem.Click += new System.EventHandler(this.openImageToolStripMenuItem_Click);
             // 
@@ -137,20 +142,20 @@
             this.saveCFileToolSMenuItem.Enabled = false;
             this.saveCFileToolSMenuItem.Image = global::GLCDToolsKit.Properties.Resources.disk_pen_save_save_as_write;
             this.saveCFileToolSMenuItem.Name = "saveCFileToolSMenuItem";
-            this.saveCFileToolSMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.saveCFileToolSMenuItem.Size = new System.Drawing.Size(344, 34);
             this.saveCFileToolSMenuItem.Text = "Convert and Save File";
             this.saveCFileToolSMenuItem.Click += new System.EventHandler(this.saveCFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(231, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(341, 6);
             // 
             // saveImageToolStripMenuItem
             // 
             this.saveImageToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.floppy_unmount;
             this.saveImageToolStripMenuItem.Name = "saveImageToolStripMenuItem";
-            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(344, 34);
             this.saveImageToolStripMenuItem.Text = "Save Monochrome Image";
             this.saveImageToolStripMenuItem.Visible = false;
             this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.saveImageToolStripMenuItem_Click);
@@ -159,7 +164,7 @@
             // 
             this.saveImageAsToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.disk_pen_save_save_as_write;
             this.saveImageAsToolStripMenuItem.Name = "saveImageAsToolStripMenuItem";
-            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(234, 30);
+            this.saveImageAsToolStripMenuItem.Size = new System.Drawing.Size(344, 34);
             this.saveImageAsToolStripMenuItem.Text = "Save Monochrome Image As";
             this.saveImageAsToolStripMenuItem.Click += new System.EventHandler(this.saveImageAsToolStripMenuItem_Click);
             // 
@@ -170,9 +175,10 @@
             this.PalleteMenu,
             this.propertiesToolStripMenuItem,
             this.convertToMonoToolStripMenuItem,
-            this.charEditorToolStripMenuItem});
+            this.charEditorToolStripMenuItem,
+            this.fontToolStripMenuItem});
             this.infoToolStripMenuItem.Name = "infoToolStripMenuItem";
-            this.infoToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
+            this.infoToolStripMenuItem.Size = new System.Drawing.Size(69, 29);
             this.infoToolStripMenuItem.Text = "Tools";
             // 
             // imageInformationToolStripMenuItem
@@ -180,7 +186,7 @@
             this.imageInformationToolStripMenuItem.Enabled = false;
             this.imageInformationToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.image_photo_thumbnail;
             this.imageInformationToolStripMenuItem.Name = "imageInformationToolStripMenuItem";
-            this.imageInformationToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.imageInformationToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.imageInformationToolStripMenuItem.Text = "Image Information";
             this.imageInformationToolStripMenuItem.Click += new System.EventHandler(this.imageInformationToolStripMenuItem_Click);
             // 
@@ -189,7 +195,7 @@
             this.PalleteMenu.Enabled = false;
             this.PalleteMenu.Image = global::GLCDToolsKit.Properties.Resources.colorize;
             this.PalleteMenu.Name = "PalleteMenu";
-            this.PalleteMenu.Size = new System.Drawing.Size(188, 30);
+            this.PalleteMenu.Size = new System.Drawing.Size(270, 34);
             this.PalleteMenu.Text = "Color Pallete";
             this.PalleteMenu.Click += new System.EventHandler(this.colorPalleteToolStripMenuItem_Click);
             // 
@@ -197,7 +203,7 @@
             // 
             this.propertiesToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.card_chip_settings_tool;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.propertiesToolStripMenuItem.Text = "Settings";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
@@ -206,7 +212,7 @@
             this.convertToMonoToolStripMenuItem.Enabled = false;
             this.convertToMonoToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.development_hammer_package_tool;
             this.convertToMonoToolStripMenuItem.Name = "convertToMonoToolStripMenuItem";
-            this.convertToMonoToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.convertToMonoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.convertToMonoToolStripMenuItem.Text = "Convert To Mono";
             this.convertToMonoToolStripMenuItem.ToolTipText = "Convert the image to monochrome";
             this.convertToMonoToolStripMenuItem.Click += new System.EventHandler(this.convertToMonoToolStripMenuItem_Click);
@@ -215,7 +221,7 @@
             // 
             this.charEditorToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.character_font_type;
             this.charEditorToolStripMenuItem.Name = "charEditorToolStripMenuItem";
-            this.charEditorToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
+            this.charEditorToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.charEditorToolStripMenuItem.Text = "Char editor";
             this.charEditorToolStripMenuItem.Click += new System.EventHandler(this.charEditorToolStripMenuItem_Click);
             // 
@@ -227,21 +233,21 @@
             this.toolStripMenuItem1,
             this.aboutToolStripMenuItem});
             this.aboutToolStripMenuItem1.Name = "aboutToolStripMenuItem1";
-            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(44, 20);
+            this.aboutToolStripMenuItem1.Size = new System.Drawing.Size(65, 29);
             this.aboutToolStripMenuItem1.Text = "Help";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.help_question_mark;
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // docsToolStripMenuItem
             // 
             this.docsToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.document;
             this.docsToolStripMenuItem.Name = "docsToolStripMenuItem";
-            this.docsToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.docsToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.docsToolStripMenuItem.Text = "Docs";
             this.docsToolStripMenuItem.Visible = false;
             // 
@@ -249,7 +255,7 @@
             // 
             this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(208, 34);
             this.toolStripMenuItem1.Text = "Registration";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.ToolStripMenuItem1_Click);
             // 
@@ -257,7 +263,7 @@
             // 
             this.aboutToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.help_question_mark_support;
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(208, 34);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -285,9 +291,10 @@
             this.bpp_s1,
             this.toolStripStatusLabel8,
             this.Indexed_s1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 512);
+            this.statusStrip.Location = new System.Drawing.Point(0, 790);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(734, 22);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(2, 0, 21, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1101, 32);
             this.statusStrip.TabIndex = 8;
             this.statusStrip.Text = "Select an Image file to convert to GLCD format";
             // 
@@ -296,13 +303,13 @@
             this.toolStripStatusLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.toolStripStatusLabel1.ForeColor = System.Drawing.Color.Coral;
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(93, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(145, 25);
             this.toolStripStatusLabel1.Text = "Load Image File";
             // 
             // toolStripStatusLabel3
             // 
             this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(16, 25);
             this.toolStripStatusLabel3.Text = "|";
             // 
             // sizeStatusLabel
@@ -310,13 +317,13 @@
             this.sizeStatusLabel.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.sizeStatusLabel.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.sizeStatusLabel.Name = "sizeStatusLabel";
-            this.sizeStatusLabel.Size = new System.Drawing.Size(33, 17);
+            this.sizeStatusLabel.Size = new System.Drawing.Size(51, 25);
             this.sizeStatusLabel.Text = "Size:";
             // 
             // toolStripStatusLabel2
             // 
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
-            this.toolStripStatusLabel2.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel2.Size = new System.Drawing.Size(16, 25);
             this.toolStripStatusLabel2.Text = "|";
             // 
             // Output_sl
@@ -324,13 +331,13 @@
             this.Output_sl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.Output_sl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Output_sl.Name = "Output_sl";
-            this.Output_sl.Size = new System.Drawing.Size(50, 17);
+            this.Output_sl.Size = new System.Drawing.Size(78, 25);
             this.Output_sl.Text = "Output:";
             // 
             // toolStripStatusLabel4
             // 
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
-            this.toolStripStatusLabel4.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel4.Size = new System.Drawing.Size(16, 25);
             this.toolStripStatusLabel4.Text = "|";
             // 
             // FileExt_sl
@@ -338,13 +345,13 @@
             this.FileExt_sl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.FileExt_sl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.FileExt_sl.Name = "FileExt_sl";
-            this.FileExt_sl.Size = new System.Drawing.Size(50, 17);
+            this.FileExt_sl.Size = new System.Drawing.Size(78, 25);
             this.FileExt_sl.Text = "File Ext:";
             // 
             // toolStripStatusLabel5
             // 
             this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(16, 25);
             this.toolStripStatusLabel5.Text = "|";
             // 
             // Compression_sl
@@ -352,13 +359,13 @@
             this.Compression_sl.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.Compression_sl.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Compression_sl.Name = "Compression_sl";
-            this.Compression_sl.Size = new System.Drawing.Size(81, 17);
+            this.Compression_sl.Size = new System.Drawing.Size(126, 25);
             this.Compression_sl.Text = "Compression:";
             // 
             // toolStripStatusLabel6
             // 
             this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(16, 25);
             this.toolStripStatusLabel6.Text = "|";
             // 
             // bpp_s1
@@ -366,13 +373,13 @@
             this.bpp_s1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.bpp_s1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.bpp_s1.Name = "bpp_s1";
-            this.bpp_s1.Size = new System.Drawing.Size(28, 17);
+            this.bpp_s1.Size = new System.Drawing.Size(45, 25);
             this.bpp_s1.Text = "bpp";
             // 
             // toolStripStatusLabel8
             // 
             this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(16, 25);
             this.toolStripStatusLabel8.Text = "|";
             // 
             // Indexed_s1
@@ -380,16 +387,17 @@
             this.Indexed_s1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.Indexed_s1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.Indexed_s1.Name = "Indexed_s1";
-            this.Indexed_s1.Size = new System.Drawing.Size(64, 17);
+            this.Indexed_s1.Size = new System.Drawing.Size(99, 25);
             this.Indexed_s1.Text = "Indexed: ?";
             // 
             // BGColorButton
             // 
             this.BGColorButton.BackColor = System.Drawing.Color.White;
             this.BGColorButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGColorButton.Location = new System.Drawing.Point(12, 476);
+            this.BGColorButton.Location = new System.Drawing.Point(18, 732);
+            this.BGColorButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BGColorButton.Name = "BGColorButton";
-            this.BGColorButton.Size = new System.Drawing.Size(22, 23);
+            this.BGColorButton.Size = new System.Drawing.Size(33, 35);
             this.BGColorButton.TabIndex = 9;
             this.BGColorButton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.BGColorButton.UseVisualStyleBackColor = false;
@@ -400,9 +408,10 @@
             this.Convert_btn.Enabled = false;
             this.Convert_btn.Font = new System.Drawing.Font("Algerian", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Convert_btn.ForeColor = System.Drawing.Color.Blue;
-            this.Convert_btn.Location = new System.Drawing.Point(624, 459);
+            this.Convert_btn.Location = new System.Drawing.Point(936, 706);
+            this.Convert_btn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Convert_btn.Name = "Convert_btn";
-            this.Convert_btn.Size = new System.Drawing.Size(98, 35);
+            this.Convert_btn.Size = new System.Drawing.Size(147, 54);
             this.Convert_btn.TabIndex = 0;
             this.Convert_btn.Text = "Convert";
             this.Convert_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -413,9 +422,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label2.Location = new System.Drawing.Point(40, 481);
+            this.label2.Location = new System.Drawing.Point(60, 740);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(107, 13);
+            this.label2.Size = new System.Drawing.Size(156, 20);
             this.label2.TabIndex = 10;
             this.label2.Text = "Background color";
             // 
@@ -423,9 +433,10 @@
             // 
             this.LoadImageBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.LoadImageBtn.Image = global::GLCDToolsKit.Properties.Resources.folder_image2;
-            this.LoadImageBtn.Location = new System.Drawing.Point(700, 51);
+            this.LoadImageBtn.Location = new System.Drawing.Point(1050, 78);
+            this.LoadImageBtn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.LoadImageBtn.Name = "LoadImageBtn";
-            this.LoadImageBtn.Size = new System.Drawing.Size(22, 20);
+            this.LoadImageBtn.Size = new System.Drawing.Size(33, 31);
             this.LoadImageBtn.TabIndex = 5;
             this.LoadImageBtn.UseVisualStyleBackColor = true;
             this.LoadImageBtn.Click += new System.EventHandler(this.LoadImageBtn_Click);
@@ -435,12 +446,19 @@
             this.RegistrationTimer.Interval = 30000;
             this.RegistrationTimer.Tick += new System.EventHandler(this.RegistrationTimer_Tick);
             // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
+            // 
             // GLCDToolsKitForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(734, 534);
+            this.ClientSize = new System.Drawing.Size(1101, 822);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BGColorButton);
             this.Controls.Add(this.statusStrip);
@@ -454,6 +472,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "GLCDToolsKitForm";
@@ -517,6 +536,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         public System.Windows.Forms.Timer RegistrationTimer;
+        private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
     }
 }
 
