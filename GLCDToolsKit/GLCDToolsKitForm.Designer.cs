@@ -46,6 +46,7 @@
             this.propertiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.convertToMonoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.charEditorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.docsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,7 +73,6 @@
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.LoadImageBtn = new System.Windows.Forms.Button();
             this.RegistrationTimer = new System.Windows.Forms.Timer(this.components);
-            this.fontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
@@ -113,7 +113,7 @@
             this.aboutToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1101, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1101, 33);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -144,7 +144,7 @@
             this.saveCFileToolSMenuItem.Name = "saveCFileToolSMenuItem";
             this.saveCFileToolSMenuItem.Size = new System.Drawing.Size(344, 34);
             this.saveCFileToolSMenuItem.Text = "Convert and Save File";
-            this.saveCFileToolSMenuItem.Click += new System.EventHandler(this.saveCFileToolStripMenuItem_Click);
+            this.saveCFileToolSMenuItem.Click += new System.EventHandler(this.saveSourceFileToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
@@ -158,7 +158,7 @@
             this.saveImageToolStripMenuItem.Size = new System.Drawing.Size(344, 34);
             this.saveImageToolStripMenuItem.Text = "Save Monochrome Image";
             this.saveImageToolStripMenuItem.Visible = false;
-            this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.saveImageToolStripMenuItem_Click);
+            this.saveImageToolStripMenuItem.Click += new System.EventHandler(this.saveSourceFileToolStripMenuItem_Click);
             // 
             // saveImageAsToolStripMenuItem
             // 
@@ -186,7 +186,7 @@
             this.imageInformationToolStripMenuItem.Enabled = false;
             this.imageInformationToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.image_photo_thumbnail;
             this.imageInformationToolStripMenuItem.Name = "imageInformationToolStripMenuItem";
-            this.imageInformationToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.imageInformationToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.imageInformationToolStripMenuItem.Text = "Image Information";
             this.imageInformationToolStripMenuItem.Click += new System.EventHandler(this.imageInformationToolStripMenuItem_Click);
             // 
@@ -195,7 +195,7 @@
             this.PalleteMenu.Enabled = false;
             this.PalleteMenu.Image = global::GLCDToolsKit.Properties.Resources.colorize;
             this.PalleteMenu.Name = "PalleteMenu";
-            this.PalleteMenu.Size = new System.Drawing.Size(270, 34);
+            this.PalleteMenu.Size = new System.Drawing.Size(263, 34);
             this.PalleteMenu.Text = "Color Pallete";
             this.PalleteMenu.Click += new System.EventHandler(this.colorPalleteToolStripMenuItem_Click);
             // 
@@ -203,7 +203,7 @@
             // 
             this.propertiesToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.card_chip_settings_tool;
             this.propertiesToolStripMenuItem.Name = "propertiesToolStripMenuItem";
-            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.propertiesToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.propertiesToolStripMenuItem.Text = "Settings";
             this.propertiesToolStripMenuItem.Click += new System.EventHandler(this.propertiesToolStripMenuItem_Click);
             // 
@@ -212,7 +212,7 @@
             this.convertToMonoToolStripMenuItem.Enabled = false;
             this.convertToMonoToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.development_hammer_package_tool;
             this.convertToMonoToolStripMenuItem.Name = "convertToMonoToolStripMenuItem";
-            this.convertToMonoToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.convertToMonoToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.convertToMonoToolStripMenuItem.Text = "Convert To Mono";
             this.convertToMonoToolStripMenuItem.ToolTipText = "Convert the image to monochrome";
             this.convertToMonoToolStripMenuItem.Click += new System.EventHandler(this.convertToMonoToolStripMenuItem_Click);
@@ -221,9 +221,16 @@
             // 
             this.charEditorToolStripMenuItem.Image = global::GLCDToolsKit.Properties.Resources.character_font_type;
             this.charEditorToolStripMenuItem.Name = "charEditorToolStripMenuItem";
-            this.charEditorToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.charEditorToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
             this.charEditorToolStripMenuItem.Text = "Char editor";
             this.charEditorToolStripMenuItem.Click += new System.EventHandler(this.charEditorToolStripMenuItem_Click);
+            // 
+            // fontToolStripMenuItem
+            // 
+            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
+            this.fontToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
+            this.fontToolStripMenuItem.Text = "Font";
+            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem1
             // 
@@ -445,13 +452,6 @@
             // 
             this.RegistrationTimer.Interval = 30000;
             this.RegistrationTimer.Tick += new System.EventHandler(this.RegistrationTimer_Tick);
-            // 
-            // fontToolStripMenuItem
-            // 
-            this.fontToolStripMenuItem.Name = "fontToolStripMenuItem";
-            this.fontToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
-            this.fontToolStripMenuItem.Text = "Font";
-            this.fontToolStripMenuItem.Click += new System.EventHandler(this.fontToolStripMenuItem_Click);
             // 
             // GLCDToolsKitForm
             // 

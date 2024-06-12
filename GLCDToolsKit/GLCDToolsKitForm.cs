@@ -200,18 +200,30 @@ namespace GLCDToolsKit
 
         private void ConvertBtn_Click(object sender, EventArgs e)
         {
+            bool success = false;
 
-            //Color backgoundColor = BGColorButton.BackColor;
-            bool result = true;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "C Source Code|*.c|Asm Source COde|*.s;*.a|Binary File|*.bin";
 
-            if (settings.DataStructureFormat == Settings.LanguageFormat.C)
-                result = generateCfile();
-            else if (settings.DataStructureFormat == Settings.LanguageFormat.Bin)
-                result = generateBinFile();
-            else
-                result = generateAsmFile();
 
-            if (result)
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+
+                switch (saveFileDialog.FilterIndex)
+                {
+                    case 1:
+                        success = generateCfile();
+                        break;
+                    case 2:
+                        success = generateAsmFile();
+                        break;
+                    case 3:
+                        success = generateBinFile();
+                        break;
+                }
+            }
+
+            if (success)
                 MessageBox.Show("File was converted and Saved", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
@@ -678,7 +690,7 @@ namespace GLCDToolsKit
             about.ShowDialog();
         }
 
-        private void saveCFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveSourceFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConvertBtn_Click(this, EventArgs.Empty);
         }
@@ -883,11 +895,7 @@ namespace GLCDToolsKit
             bpp_s1.Text = "bpp: " + image.GetBPP();
         }
 
-        private void saveImageToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-           
-            
-        }
+        
 
         private void saveImageAsToolStripMenuItem_Click(object sender, EventArgs e)
         {

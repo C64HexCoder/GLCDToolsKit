@@ -36,12 +36,20 @@
             this.selectFontToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.rangeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.fontDialog = new System.Windows.Forms.FontDialog();
-            this.fontDisp = new GfxLib.FontDisp();
+            this.fontsDispPanel = new System.Windows.Forms.Panel();
+            this.fromNumUD = new System.Windows.Forms.NumericUpDown();
+            this.toNumUD = new System.Windows.Forms.NumericUpDown();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.CharPB = new GfxLib.ImageBox();
             this.imageGrid = new GfxLib.ImageGrid();
+            this.fontGroupBox = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeNumUpDown)).BeginInit();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fromNumUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toNumUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharPB)).BeginInit();
+            this.fontGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -56,15 +64,15 @@
             // fontListComboBox
             // 
             this.fontListComboBox.FormattingEnabled = true;
-            this.fontListComboBox.Location = new System.Drawing.Point(12, 66);
+            this.fontListComboBox.Location = new System.Drawing.Point(26, 17);
             this.fontListComboBox.Name = "fontListComboBox";
-            this.fontListComboBox.Size = new System.Drawing.Size(775, 28);
+            this.fontListComboBox.Size = new System.Drawing.Size(372, 28);
             this.fontListComboBox.TabIndex = 3;
             this.fontListComboBox.SelectedIndexChanged += new System.EventHandler(this.fontListComboBox_SelectedIndexChanged);
             // 
             // fontSizeNumUpDown
             // 
-            this.fontSizeNumUpDown.Location = new System.Drawing.Point(668, 118);
+            this.fontSizeNumUpDown.Location = new System.Drawing.Point(278, 51);
             this.fontSizeNumUpDown.Name = "fontSizeNumUpDown";
             this.fontSizeNumUpDown.Size = new System.Drawing.Size(120, 26);
             this.fontSizeNumUpDown.TabIndex = 5;
@@ -76,6 +84,7 @@
             // 
             // menuStrip
             // 
+            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fontToolStripMenuItem});
@@ -97,9 +106,9 @@
             // selectFontToolStripMenuItem
             // 
             this.selectFontToolStripMenuItem.Name = "selectFontToolStripMenuItem";
-            this.selectFontToolStripMenuItem.Size = new System.Drawing.Size(201, 34);
+            this.selectFontToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.selectFontToolStripMenuItem.Text = "Select Font";
-            this.selectFontToolStripMenuItem.Click += new System.EventHandler(this.selectFontToolStripMenuItem_Click);
+            this.selectFontToolStripMenuItem.Click += new System.EventHandler(this.loadSystemFontToolStripMenuItem_Click);
             // 
             // rangeToolStripMenuItem
             // 
@@ -107,31 +116,58 @@
             this.rangeToolStripMenuItem.Size = new System.Drawing.Size(201, 34);
             this.rangeToolStripMenuItem.Text = "Range";
             // 
-            // fontDisp
+            // fontsDispPanel
             // 
-            this.fontDisp.AutoSize = true;
-            this.fontDisp.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.fontDisp.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.fontDisp.CellSizing = GfxLib.ImageGrid.CellSize.Fixed;
-            this.fontDisp.CellsOnX = 8;
-            this.fontDisp.CellsOnY = 8;
-            this.fontDisp.CellsWidthHeight = 8;
-            this.fontDisp.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.fontDisp.Location = new System.Drawing.Point(229, 170);
-            this.fontDisp.Name = "fontDisp";
-            this.fontDisp.Size = new System.Drawing.Size(117, 90);
-            this.fontDisp.TabIndex = 6;
+            this.fontsDispPanel.AutoScroll = true;
+            this.fontsDispPanel.Location = new System.Drawing.Point(427, 36);
+            this.fontsDispPanel.Name = "fontsDispPanel";
+            this.fontsDispPanel.Size = new System.Drawing.Size(360, 445);
+            this.fontsDispPanel.TabIndex = 8;
+            // 
+            // fromNumUD
+            // 
+            this.fromNumUD.Location = new System.Drawing.Point(26, 51);
+            this.fromNumUD.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.fromNumUD.Name = "fromNumUD";
+            this.fromNumUD.Size = new System.Drawing.Size(120, 26);
+            this.fromNumUD.TabIndex = 9;
+            this.fromNumUD.Value = new decimal(new int[] {
+            48,
+            0,
+            0,
+            0});
+            // 
+            // toNumUD
+            // 
+            this.toNumUD.Location = new System.Drawing.Point(152, 51);
+            this.toNumUD.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.toNumUD.Name = "toNumUD";
+            this.toNumUD.Size = new System.Drawing.Size(120, 26);
+            this.toNumUD.TabIndex = 10;
+            this.toNumUD.Value = new decimal(new int[] {
+            127,
+            0,
+            0,
+            0});
             // 
             // CharPB
             // 
             this.CharPB.AutoScaleImageBox = true;
             this.CharPB.HrizontalScrollBar = null;
             this.CharPB.Image = null;
-            this.CharPB.Location = new System.Drawing.Point(600, 159);
+            this.CharPB.Location = new System.Drawing.Point(290, 130);
             this.CharPB.Name = "CharPB";
             this.CharPB.ScaleFactor = 10;
             this.CharPB.ScaleFactorFloat = 4F;
-            this.CharPB.Size = new System.Drawing.Size(188, 298);
+            this.CharPB.Size = new System.Drawing.Size(131, 351);
             this.CharPB.TabIndex = 4;
             this.CharPB.TabStop = false;
             this.CharPB.VerticalScrollBar = null;
@@ -150,31 +186,48 @@
             this.imageGrid.GridImage = null;
             this.imageGrid.KeepAspectRatio = true;
             this.imageGrid.LineWidth = 2;
-            this.imageGrid.Location = new System.Drawing.Point(12, 170);
+            this.imageGrid.Location = new System.Drawing.Point(12, 130);
             this.imageGrid.Name = "imageGrid";
             this.imageGrid.ResizeToFitCells = GfxLib.ImageGrid.ResizeTypes.None;
             this.imageGrid.Size = new System.Drawing.Size(122, 122);
             this.imageGrid.TabIndex = 0;
+            // 
+            // fontGroupBox
+            // 
+            this.fontGroupBox.BackColor = System.Drawing.SystemColors.Control;
+            this.fontGroupBox.Controls.Add(this.fontListComboBox);
+            this.fontGroupBox.Controls.Add(this.toNumUD);
+            this.fontGroupBox.Controls.Add(this.fontSizeNumUpDown);
+            this.fontGroupBox.Controls.Add(this.fromNumUD);
+            this.fontGroupBox.Location = new System.Drawing.Point(12, 36);
+            this.fontGroupBox.Name = "fontGroupBox";
+            this.fontGroupBox.Size = new System.Drawing.Size(409, 88);
+            this.fontGroupBox.TabIndex = 11;
+            this.fontGroupBox.TabStop = false;
+            this.fontGroupBox.Text = "Font";
             // 
             // Fonts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 528);
-            this.Controls.Add(this.fontDisp);
-            this.Controls.Add(this.fontSizeNumUpDown);
+            this.Controls.Add(this.fontGroupBox);
+            this.Controls.Add(this.fontsDispPanel);
             this.Controls.Add(this.CharPB);
-            this.Controls.Add(this.fontListComboBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.imageGrid);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
             this.Name = "Fonts";
             this.Text = "Fonts";
+            this.Load += new System.EventHandler(this.Fonts_Load);
             ((System.ComponentModel.ISupportInitialize)(this.fontSizeNumUpDown)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fromNumUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toNumUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CharPB)).EndInit();
+            this.fontGroupBox.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,11 +240,16 @@
         private System.Windows.Forms.ComboBox fontListComboBox;
         private GfxLib.ImageBox CharPB;
         private System.Windows.Forms.NumericUpDown fontSizeNumUpDown;
-        private GfxLib.FontDisp fontDisp;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem fontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectFontToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem rangeToolStripMenuItem;
         private System.Windows.Forms.FontDialog fontDialog;
+        private System.Windows.Forms.Panel fontsDispPanel;
+        private System.Windows.Forms.NumericUpDown fromNumUD;
+        private System.Windows.Forms.NumericUpDown toNumUD;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.GroupBox fontGroupBox;
     }
 }
