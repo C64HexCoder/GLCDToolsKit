@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Text;
 using System.Windows.Forms;
 using GfxLib;
@@ -142,20 +143,51 @@ namespace GLCDToolsKit
             {
                 switch (saveFileDialog.FilterIndex)
                 {
-                    case 1: for (int x=0; x< selectedFontDisp.GridWidth; x++)
-                                for (int y=0; y<selectedFontDisp.GridHeight; y++)
+                    case 1:
+                        SaveFontsAsC(saveFileDialog.FileName);
+                         
+                        break;
+                    case 2:
+                        for (int x = 0; x < selectedFontDisp.GridWidth; x++)
+                            for (int y = 0; y < selectedFontDisp.GridHeight; y++)
                             {
 
                             }
-                            
-                        break;
-                    case 2:
-                        byte temp = selectedFontDisp.GetVerticalByte(2, 0);
+
                         break;
                 }
             }
         }
 
+        private void SaveFontsAsC (string fileName)
+        {
+            int NumInLine = 0;
+            StreamWriter sr = new StreamWriter(fileName);
+
+            sr.Write("const char FontData[] = {\r\n\t");
+
+            foreach (FontDisp fd in fontsDispPanel.Controls)
+            {
+                for (int p = 0; p < fd.HightInPages; p++)
+                {
+                    for (int x = 0; x < fd.xSize; x++)
+                    {
+                        byte vByte = fd.GetVerticalByte(x, p);
+                        sr.Write($"0x{vByte:X2},");
+                    }
+                }
+                sr.Write("\t//");
+                if (fd.Character != '\\')
+                    sr.WriteLine(fd.Character);
+                else
+                    sr.WriteLine("Backslash");
+
+                sr.Write('\t');
+            }
+            sr.WriteLine("}");
+            sr.Flush();
+            sr.Close();
+        }
         private void fontSizeNumUpDown_ValueChanged(object sender, EventArgs e)
         {
             string fontName = fontListComboBox.SelectedItem.ToString();
